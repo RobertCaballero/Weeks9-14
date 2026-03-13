@@ -5,6 +5,7 @@ public class ControllerInput : MonoBehaviour
 {
     public float speed;
     public Vector2 directionalInput;
+    public Vector2 LookInput;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,7 +18,7 @@ public class ControllerInput : MonoBehaviour
     {
 
         transform.position += (Vector3)directionalInput * speed * Time.deltaTime;
-
+        
     }
 
     public void OnMove (InputAction.CallbackContext context)
@@ -34,6 +35,11 @@ public class ControllerInput : MonoBehaviour
         }
 
 
+    }
+
+    public void OnLook (InputAction.CallbackContext context)
+    {
+        LookInput = context.ReadValue<Vector2>();
     }
 
     public void OnPoint(InputAction.CallbackContext context)
