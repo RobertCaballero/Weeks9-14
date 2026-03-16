@@ -5,7 +5,7 @@ public class Interaction : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     int index = 0;
     public Sprite [] Player2;
-    public float Increment = 1f;
+ 
     
     
 
