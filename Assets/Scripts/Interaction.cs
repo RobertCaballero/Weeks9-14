@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Interaction : MonoBehaviour
 {
@@ -19,34 +20,43 @@ public class Interaction : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(index);
+        //Debug.Log(index);
 
 
-        if (index == Player2.Length-1)
-        {
-            index = 0;
-        }
-        else
-        {
-            index++;
-        }
+        //if (index == Player2.Length-1)
+        //{
+        //    index = 0;
+        //}
+        //else
+        //{
+        //    index++;
+        //}
 
-        spriteRenderer.sprite = Player2[index];
+        //spriteRenderer.sprite = Player2[index];
 
     }
 
-    public void ChangeSprite()
+    public void ChangeSprite(InputAction.CallbackContext context)
     {
-
-        if (index == Player2.Length - 1)
+        if (context.performed)
         {
-            index = 0;
-        }
-        else
-        {
-            index++;
-        }
+            Debug.Log("Interacted");
 
-        spriteRenderer.sprite = Player2[index];
+
+            Debug.Log(index);
+
+            if (index == Player2.Length - 1)
+            {
+                index = 0;
+            }
+            else
+            {
+
+                index++;
+            }
+
+            spriteRenderer.sprite = Player2[index];
+
+        }
     }
 }
