@@ -5,7 +5,6 @@ public class Gun : MonoBehaviour
 {
     public GameObject Body;
     public Vector2 Look;
-    public float Rotationspeed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
