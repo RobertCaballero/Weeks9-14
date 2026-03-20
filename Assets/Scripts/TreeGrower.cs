@@ -7,12 +7,15 @@ public class TreeGrower : MonoBehaviour
 
     public AnimationCurve growCurve;
     public Transform branchesTransform;
-    public float maxSPawnDistance;
+    public float maxSpawnDistance;
 
     public float duration;
 
     public GameObject applePrefab;
     public float appleGrowDuration;
+
+    private Coroutine treeGrowCoroutine;
+    private Coroutine appleCoroutine;
 
     //private float progress = 0f;
     //private bool isGrowing = false;
@@ -50,9 +53,9 @@ public class TreeGrower : MonoBehaviour
     private IEnumerator TreeGrowUpdate()
     {
         float progress = 0f;
-
+        //Debug.Log("Progress["+progress.ToString()+"] Duration["+duration.ToString()+"]");
         //The contents of the while loop run while the condition is true
-        while (progress > duration)
+        while (progress < duration)
         {
             progress += Time.deltaTime;
             transform.localScale = growCurve.Evaluate(progress / duration) * Vector3.one;
@@ -64,15 +67,28 @@ public class TreeGrower : MonoBehaviour
             Debug.Log("How much time has it passed" + Time.deltaTime);
         }
 
-        StartCoroutine(AppleGrowUpdate());
-        StartCoroutine(AppleGrowUpdate());
+        //Relinquis control for unity until the apple has finished growing
+        //yield return new WaitForSeconds(appleGrowDuration);
+
+         appleCoroutine = StartCoroutine(AppleGrowUpdate());
+
+        //Relinquish control of Unity until the coroutine for the apple
+        //has finished executing
+        yield return appleCoroutine;
+
+        appleCoroutine = StartCoroutine(AppleGrowUpdate());
+        yield return appleCoroutine;
+
         StartCoroutine(AppleGrowUpdate());
 
     }
 
     private IEnumerator AppleGrowUpdate()
     {
-        GameObject spawnedApple = Instantiate(applePrefab, transform.position, Quaternion.identity);
+        Vector3 spawnPosition = branchesTransform.position;
+        spawnPosition += (Vector3)UnityEngine.Random.insideUnitCircle * maxSpawnDistance;
+
+        GameObject spawnedApple = Instantiate(applePrefab, spawnPosition, Quaternion.identity);
         spawnedApple.transform.localScale = Vector3.zero;
         float progress = 0f;
 
@@ -91,7 +107,23 @@ public class TreeGrower : MonoBehaviour
     public void OnGrowPress () 
     {
         //isGrowing=true;
-        StartCoroutine(TreeGrowUpdate());
+        treeGrowCoroutine = StartCoroutine(TreeGrowUpdate());
     
+    }
+
+    public void OnStopPress()
+    {
+        //
+
+        if (treeGrowCoroutine != null)
+        {
+            StopCoroutine(treeGrowCoroutine);
+        }
+        if(appleCoroutine != null)
+        {
+            StopCoroutine(appleCoroutine);
+        }
+        
+        
     }
 }
