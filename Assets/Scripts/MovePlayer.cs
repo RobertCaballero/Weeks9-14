@@ -6,7 +6,7 @@ public class MovePlayer : MonoBehaviour
 
     public AnimationCurve movePlayer;
     public float duration;
-    private float progress = 0f;
+    
 
     private Coroutine PlayerMoves;
 
