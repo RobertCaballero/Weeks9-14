@@ -7,6 +7,7 @@ public class Knight : MonoBehaviour
     public float speed;
 
     public float xMovement;
+    public float yMovement;
 
     public Animator knightAnimator;
 
@@ -20,6 +21,7 @@ public class Knight : MonoBehaviour
     void Update()
     {
         transform.position += new Vector3(xMovement, 0f, 0f) * speed * Time.deltaTime;
+        transform.position += new Vector3(yMovement, 0f, 0f) * speed * Time.deltaTime;
     }
 
     public void OnFootstep()
@@ -38,5 +40,18 @@ public class Knight : MonoBehaviour
 
         knightAnimator.SetBool("isRunning", isRunning);
     }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+
+        Vector2 RobertJump = context.ReadValue<Vector2>();
+        yMovement = RobertJump.y;
+
+        bool isJumping = yMovement != 0f;
+
+        knightAnimator.SetBool("isJumping", isJumping);
+
+    }
+
 
 }
