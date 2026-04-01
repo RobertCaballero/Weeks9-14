@@ -39,10 +39,7 @@ public class ClickToMove : MonoBehaviour
         
     }
 
-    //private IEnumerator Playermoving()
-    //{
-    //    Player.transform.position =
-    //}
+  
 
     
 }
