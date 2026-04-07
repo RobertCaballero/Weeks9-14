@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     public GameObject bullet;
     public Transform SpawnPoint;
     public Transform ShootHere;
-
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = SpawnPoint.position;
     }
 
     public void Interact(InputAction.CallbackContext context)
