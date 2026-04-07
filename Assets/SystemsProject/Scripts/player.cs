@@ -5,6 +5,8 @@ public class player : MonoBehaviour
 {
     public int Health = 10;
     public GameObject bullet;
+    public Transform SapwnPoint;
+    public Transform ShootHere;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,9 +33,14 @@ public class player : MonoBehaviour
 
     }
 
-    public void OnClick ()
+    public void Interact(InputAction.CallbackContext context)
     {
-     
+
+    }
+
+    public void OnClick (InputAction.CallbackContext context)
+    {
+        
     }
 
 }
