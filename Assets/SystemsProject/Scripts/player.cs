@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class player : MonoBehaviour
 {
     public int Health = 10;
+    public GameObject bullet;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -13,15 +15,25 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Health < 0)
-        {
-            transform.position = Vector3.zero;
-        }
+
     }
 
 
     public void TakingDamage(int damage)
     {
         Health -= damage;
+
+        if (Health <= 0)
+        {
+            transform.position = Vector3.zero;
+            Health = 10;
+        }
+
     }
+
+    public void OnClick ()
+    {
+     
+    }
+
 }

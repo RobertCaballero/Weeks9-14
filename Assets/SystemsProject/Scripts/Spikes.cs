@@ -4,10 +4,11 @@ using UnityEngine.Events;
 public class Spikes : MonoBehaviour
 {
 
-    public int damage = 10;
+    public int damage;
     public player player;
-    public UnityEvent OnEnter;
-    public UnityEvent OnExit;
+    public Color Damaged;
+    public Color NotDamaged;
+   
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,5 +27,17 @@ public class Spikes : MonoBehaviour
         player.TakingDamage(damage);
     }
 
+    public void ChangePlayerColour ()
+    {
+        SpriteRenderer playerRenderer = player.GetComponent<SpriteRenderer>();
+        NotDamaged = playerRenderer.color;
+        playerRenderer.color = Damaged;
 
+    }
+
+    public void ResterPlayerColour ()
+    {
+        SpriteRenderer playerRenderer = player.GetComponent<SpriteRenderer>();
+        playerRenderer.color = NotDamaged;
+    }
 }
