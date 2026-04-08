@@ -46,9 +46,7 @@ public class SpawnBullet : MonoBehaviour
 
         if (context.performed && spawnedBullet !=null)
         {
-
             MoveBullet = StartCoroutine(Move());
-
         }
 
         Debug.Log(context.performed);
