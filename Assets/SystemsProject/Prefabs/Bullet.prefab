@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 714269251316088773}
   - component: {fileID: 3360971104842023176}
   - component: {fileID: 4464658970379924070}
+  - component: {fileID: 2148314838106523472}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.54764, y: -1.47927, z: 0}
-  m_LocalScale: {x: 0.49619, y: 0.49619, z: 0.49619}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -5679600979012252902, guid: aa3db37a7322b7f44898447ccea59de0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,4 +106,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   direction: {x: 0, y: 0, z: 0}
-  speed: 10
+  speed: 1
+  timer: 1
+  SmallBullet: {fileID: -5679600979012252902, guid: aa3db37a7322b7f44898447ccea59de0, type: 3}
+  BigBullet: {fileID: 8694655156706444791, guid: 43468735ee17e7b42bbe078d527c8a90, type: 3}
+  catBullet: {fileID: 3576352443903231639, guid: a325a10517853214796952b7d9987acf, type: 3}
+  dogBullet: {fileID: 7646969589820797452, guid: 8e029df681373004681867770c01d369, type: 3}
+--- !u!114 &2148314838106523472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5754737920421596536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44d88971adfde1d43b2e72482fdb48d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonsSpeed
+  spawnedBullet: {fileID: 5754737920421596536}
