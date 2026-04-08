@@ -892,6 +892,7 @@ GameObject:
   - component: {fileID: 498562427}
   - component: {fileID: 498562430}
   - component: {fileID: 498562426}
+  - component: {fileID: 498562431}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -950,8 +951,8 @@ MonoBehaviour:
     m_ActionName: 'Player/Attack[/Mouse/leftButton,/Keyboard/enter]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Bullet, Assembly-CSharp
+      - m_Target: {fileID: 498562431}
+        m_TargetAssemblyTypeName: SpawnBullet, Assembly-CSharp
         m_MethodName: Interact
         m_Mode: 0
         m_Arguments:
@@ -1002,8 +1003,8 @@ MonoBehaviour:
     m_ActionName: 'UI/Point[/Mouse/position,/Pen/position]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Bullet, Assembly-CSharp
+      - m_Target: {fileID: 498562431}
+        m_TargetAssemblyTypeName: SpawnBullet, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 0
         m_Arguments:
@@ -1143,6 +1144,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::player
   Health: 10
+--- !u!114 &498562431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498562425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570fc8f3aed99654c9fb08f82e0af63d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnBullet
+  bullet: {fileID: 5754737920421596536, guid: cc27020a9149c3d4e80c7243e412bd4a, type: 3}
+  SpawnPoint: {fileID: 2126264215}
+  ShootHere: {fileID: 1631081312}
 --- !u!1 &548921183
 GameObject:
   m_ObjectHideFlags: 0
@@ -2654,7 +2670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1631081312}
-  - component: {fileID: 1631081311}
+  - component: {fileID: 1631081313}
   m_Layer: 0
   m_Name: ShootHere
   m_TagString: Untagged
@@ -2662,18 +2678,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1631081311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631081310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 851f24d69a18b374b800f183b2d15838, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Target
 --- !u!4 &1631081312
 Transform:
   m_ObjectHideFlags: 0
@@ -2689,6 +2693,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1631081313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631081310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851f24d69a18b374b800f183b2d15838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Target
 --- !u!1 &1791722923
 GameObject:
   m_ObjectHideFlags: 0
@@ -2789,7 +2805,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2126264215}
-  - component: {fileID: 2126264216}
   m_Layer: 0
   m_Name: SpawnBullet
   m_TagString: Untagged
@@ -2812,18 +2827,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 498562429}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2126264216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126264213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 851f24d69a18b374b800f183b2d15838, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Target
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
