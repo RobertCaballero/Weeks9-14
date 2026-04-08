@@ -18,6 +18,14 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.position += direction * speed * Time.deltaTime;
+
+        Vector3 screenPos = Camera.main.WorldToViewportPoint(transform.position);
+
+        if (screenPos.x > 1 || screenPos.x < 0 ||screenPos.y > 1 || screenPos.y < 0)
+        {
+            Destroy(gameObject);
+        }
+
     }
 
    
