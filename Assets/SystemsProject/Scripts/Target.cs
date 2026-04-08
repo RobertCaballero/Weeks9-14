@@ -5,6 +5,8 @@ public class Target : MonoBehaviour
 {
 
     private Camera mainCamera;
+    //public GameObject bullet;
+    //public Transform spawnBullet;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,4 +24,7 @@ public class Target : MonoBehaviour
         Vector3 targetPos = mainCamera.ScreenToWorldPoint(mouseWorldPos);
         transform.position = new Vector3(targetPos.x, targetPos.y, 0f);
     }
-}
+
+   
+
+    }
