@@ -220,6 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 69131811}
   - component: {fileID: 69131812}
+  - component: {fileID: 69131813}
   m_Layer: 0
   m_Name: Table Right_0 (1)
   m_TagString: Untagged
@@ -301,6 +302,37 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &69131813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69131810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1993fcb285ad5cb42b2f309728a5f70b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WhenEnteringObject
+  Player: {fileID: 498562429}
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4464658970379924070, guid: cc27020a9149c3d4e80c7243e412bd4a, type: 3}
+        m_TargetAssemblyTypeName: Bullet, Assembly-CSharp
+        m_MethodName: ChangeSpriteDog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &101542541
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,6 +466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 246623700}
   - component: {fileID: 246623701}
+  - component: {fileID: 246623702}
   m_Layer: 0
   m_Name: Table Left_0 (1)
   m_TagString: Untagged
@@ -515,6 +548,37 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &246623702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246623699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1993fcb285ad5cb42b2f309728a5f70b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WhenEnteringObject
+  Player: {fileID: 498562429}
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4464658970379924070, guid: cc27020a9149c3d4e80c7243e412bd4a, type: 3}
+        m_TargetAssemblyTypeName: Bullet, Assembly-CSharp
+        m_MethodName: ChangeSpriteCat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &252946428
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,6 +862,7 @@ GameObject:
   m_Component:
   - component: {fileID: 433453474}
   - component: {fileID: 433453475}
+  - component: {fileID: 433453476}
   m_Layer: 0
   m_Name: Table Right_0
   m_TagString: Untagged
@@ -879,6 +944,37 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &433453476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433453473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1993fcb285ad5cb42b2f309728a5f70b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WhenEnteringObject
+  Player: {fileID: 498562429}
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4464658970379924070, guid: cc27020a9149c3d4e80c7243e412bd4a, type: 3}
+        m_TargetAssemblyTypeName: Bullet, Assembly-CSharp
+        m_MethodName: ChangeSpriteSmall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &498562425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,7 +1715,19 @@ MonoBehaviour:
   Player: {fileID: 498562429}
   OnEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2148314838106523472, guid: cc27020a9149c3d4e80c7243e412bd4a, type: 3}
+        m_TargetAssemblyTypeName: ButtonsSpeed, Assembly-CSharp
+        m_MethodName: IncreaseSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnExit:
     m_PersistentCalls:
       m_Calls: []
@@ -2213,7 +2321,19 @@ MonoBehaviour:
   Player: {fileID: 498562429}
   OnEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2148314838106523472, guid: cc27020a9149c3d4e80c7243e412bd4a, type: 3}
+        m_TargetAssemblyTypeName: ButtonsSpeed, Assembly-CSharp
+        m_MethodName: DecreaseSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnExit:
     m_PersistentCalls:
       m_Calls: []
@@ -2227,6 +2347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1268801812}
   - component: {fileID: 1268801813}
+  - component: {fileID: 1268801814}
   m_Layer: 0
   m_Name: Table Left_0
   m_TagString: Untagged
@@ -2308,6 +2429,37 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1268801814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268801811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1993fcb285ad5cb42b2f309728a5f70b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WhenEnteringObject
+  Player: {fileID: 498562429}
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4464658970379924070, guid: cc27020a9149c3d4e80c7243e412bd4a, type: 3}
+        m_TargetAssemblyTypeName: Bullet, Assembly-CSharp
+        m_MethodName: ChangeSpriteBig
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1344936354
 GameObject:
   m_ObjectHideFlags: 0
