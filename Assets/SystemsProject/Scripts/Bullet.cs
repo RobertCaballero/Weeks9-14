@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Threading;
 using UnityEditor.Rendering;
@@ -10,6 +11,7 @@ public class Bullet : MonoBehaviour
     public Vector3 direction;
     public float speed;
     public float timer;
+    public float bullettimer;
     public Coroutine Rotate;
 
     public Sprite SmallBullet;
@@ -33,6 +35,8 @@ public class Bullet : MonoBehaviour
 
         timer += timer * Time.deltaTime;
 
+        bullettimer += bullettimer * Time.deltaTime;
+
             transform.position += direction * speed * Time.deltaTime;
 
             Vector3 CameraSize = Camera.main.WorldToViewportPoint(transform.position);
@@ -45,6 +49,11 @@ public class Bullet : MonoBehaviour
                 timer = 0f;
             }
 
+        if (bullettimer >= 5f)
+        {
+            StopCoroutine(RotatingBullet());
+            bullettimer = 0f;
+        }
     }
 
     public IEnumerator RotatingBullet()
