@@ -107,6 +107,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LocalMultiPlayer
   moveDirection: {x: 0, y: 0}
   moveSpeed: 3
+  manager: {fileID: 0}
+  playerScale: {x: 0, y: 1, z: 0}
+  scaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0083351135
+      value: 1
+      inSlope: -1.7241985
+      outSlope: -1.7241985
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.42117262
+      value: 0.28818622
+      inSlope: -0.22794676
+      outSlope: -0.22794676
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9833374
+      value: 1.0011826
+      inSlope: 1.268305
+      outSlope: 1.268305
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &6802027616931066982
 MonoBehaviour:
   m_ObjectHideFlags: 0
