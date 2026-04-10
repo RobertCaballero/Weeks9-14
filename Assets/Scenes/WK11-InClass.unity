@@ -155,6 +155,7 @@ MonoBehaviour:
   audioSource: {fileID: 649648670}
   speed: 3
   xMovement: 0
+  yMovement: 0
   knightAnimator: {fileID: 649648667}
 --- !u!95 &649648667
 Animator:
@@ -246,7 +247,7 @@ Transform:
   m_GameObject: {fileID: 649648665}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100, y: 100, z: 0}
+  m_LocalPosition: {x: -1.71, y: 0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
