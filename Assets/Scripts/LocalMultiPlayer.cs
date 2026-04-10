@@ -7,21 +7,21 @@ public class LocalMultiPlayer : MonoBehaviour
 
     public Vector2 moveDirection;
     public float moveSpeed;
+    public float baseSpeed;
     public LocalMultiplayerManager manager;
 
     public Vector3 playerScale;
     public AnimationCurve scaleCurve;
 
-    float progress;
-    float duration = 1;
-    float time;
+    bool currentlyBoosting = false;
 
+    Coroutine boosting;
     Coroutine attacking;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -33,22 +33,22 @@ public class LocalMultiPlayer : MonoBehaviour
     }
 
 
-    public void OnMove (InputAction.CallbackContext context)
+    public void OnMove(InputAction.CallbackContext context)
     {
         moveDirection = context.ReadValue<Vector2>();
     }
 
 
-    public void OnAttack (InputAction.CallbackContext context)
+    public void OnAttack(InputAction.CallbackContext context)
     {
-        
+
 
         if (context.performed)
         {
 
             if (attacking != null)
             {
-                StopCoroutine(attacking); 
+                StopCoroutine(attacking);
             }
 
             PlayerInput playerInput = GetComponent<PlayerInput>();
@@ -56,16 +56,42 @@ public class LocalMultiPlayer : MonoBehaviour
 
             attacking = StartCoroutine(Attacking());
 
-        
+
         }
 
         Debug.Log("Attack: " + context.phase);
 
     }
 
+    public void SpeedBoost(InputAction.CallbackContext context)
+    {
+
+        if (context.performed)
+        {
+            if (!currentlyBoosting)
+            {
+                Debug.Log("start");
+
+                currentlyBoosting = true;
+
+                baseSpeed = moveSpeed;
+
+                boosting = StartCoroutine(Boost());
+
+            }
+
+        }
+        
+    }
+
+
     private IEnumerator Attacking()
     {
-       
+        float progress;
+        float duration = 1;
+        float time = 0;
+        
+
         while (time < duration)
         {
             time += Time.deltaTime;
@@ -78,12 +104,11 @@ public class LocalMultiPlayer : MonoBehaviour
 
             if (time > duration)
             {
-                Debug.Log("stop");
 
                 StopCoroutine(attacking);
 
                 time = 0;
-               
+
             }
 
             yield return null;
@@ -91,4 +116,37 @@ public class LocalMultiPlayer : MonoBehaviour
         }
     }
 
+    private IEnumerator Boost()
+    {
+        float duration = 1;
+        float time = 0;
+        float speedBoost = 2;
+
+        moveSpeed = moveSpeed * speedBoost;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+
+            if (time > duration)
+            {
+                moveSpeed = baseSpeed;
+
+                Debug.Log("stop ["+moveSpeed+"]");
+
+                time = 0;
+
+                currentlyBoosting = false;
+
+                //StopCoroutine(boosting);
+                break;
+
+            }
+
+            yield return null;
+        }
+
+
+    }
 }
+
